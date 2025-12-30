@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animated Website</title>
+<style>
+    /* Fullscreen Video Background */
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+        font-family: Arial, sans-serif;
+    }
+
+    .video-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    /* Gradient Overlay */
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(-45deg, rgba(255,0,0,0.3), rgba(0,0,0,0.3), rgba(255,0,0,0.3), rgba(0,0,0,0.3));
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
+        z-index: 0;
+    }
+
+    @keyframes gradientBG {
+        0% {background-position: 0% 50%;}
+        50% {background-position: 100% 50%;}
+        100% {background-position: 0% 50%;}
+    }
+
+    /* Centered Content */
+    .content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: white;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    /* Glowing Animated Text */
+    h1 {
+        font-size: 4em;
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff0000, 0 0 40px #ff0000;
+        margin: 20px;
+        animation: glowText 2s ease-in-out infinite alternate, floatText 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes glowText {
+        0% {text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff0000, 0 0 20px #ff0000;}
+        100% {text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff0000, 0 0 50px #ff0000;}
+    }
+
+    @keyframes floatText {
+        0% {transform: translateY(0);}
+        50% {transform: translateY(-20px);}
+        100% {transform: translateY(0);}
+    }
+
+    /* Main Join Button */
+    .btn {
+        margin-top: 20px;
+        padding: 15px 40px;
+        font-size: 1.5em;
+        color: white;
+        border: 2px solid white;
+        border-radius: 10px;
+        background: linear-gradient(-45deg, #ff0000, #000000, #ff0000, #000000);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite, glowBtn 2s ease-in-out infinite alternate;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        box-shadow: 0 0 10px #fff, 0 0 20px #ff0000;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 30px #ff0000, 0 0 40px #fff;
+    }
+
+    @keyframes glowBtn {
+        0% {box-shadow: 0 0 10px #fff, 0 0 20px #ff0000;}
+        100% {box-shadow: 0 0 20px #fff, 0 0 40px #ff0000;}
+    }
+
+    /* Small Description Text with Red Glow */
+    .description {
+        font-size: 0.9em;
+        max-width: 600px;
+        margin-top: 20px;
+        line-height: 1.5em;
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff0000, 0 0 20px #ff0000;
+        animation: glowDesc 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glowDesc {
+        0% {text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff0000, 0 0 20px #ff0000;}
+        100% {text-shadow: 0 0 15px #fff, 0 0 25px #fff, 0 0 30px #ff0000, 0 0 40px #ff0000;}
+    }
+
+    /* Social Buttons */
+    .social-buttons {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .social-btn {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(-45deg, #ff0000, #000000, #ff0000, #000000);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
+        color: white;
+        text-decoration: none;
+        font-size: 1.5em;
+        border-radius: 10px;
+        border: 2px solid white;
+        box-shadow: 0 0 10px #fff, 0 0 20px #ff0000;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .social-btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 30px #ff0000, 0 0 40px #fff;
+    }
+</style>
+</head>
+<body>
+
+<!-- Video Background -->
+<video class="video-bg" autoplay muted loop>
+    <source src="31eec6b7-cdc3-435d-9c68-a4308ab6d4c3.mp4" type="video/mp4">
+</video>
+
+<!-- Gradient Overlay -->
+<div class="overlay"></div>
+
+<!-- Centered Content -->
+<div class="content">
+    <h1>Welcome to our world</h1>
+
+    <p class="description">
+        We are our world. We sell nukes, stream accounts, and do regular live streams. Click the Join button, join our Discord server, and come to VC where we explain everything properly. Here you’ll get normal games gameplay, chill streams, and full entertainment. Support us, like the stream, and subscribe to the channel!
+    </p>
+
+    <!-- Main Join Button -->
+    <a href="https://discord.gg/gcwKWRmcyP" class="btn" target="_blank">Join Now</a>
+
+    <!-- Social Buttons -->
+    <div class="social-buttons">
+        <a href="https://youtube.com/@bakuarena?si=Zu7GH-muJpkEGPwV" class="social-btn" target="_blank">Y</a>
+        <a href="https://www.instagram.com/_raghav__247?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social-btn" target="_blank">I</a>
+    </div>
+</div>
+
+<!-- Background Music -->
+<audio autoplay loop>
+    <source src="79c5d727-3a00-49b7-9e90-09c5f1053c56.mp3" type="audio/mpeg">
+</audio>
+
+</body>
+</html>
